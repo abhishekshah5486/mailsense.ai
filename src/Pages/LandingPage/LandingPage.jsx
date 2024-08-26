@@ -1,7 +1,7 @@
 import React from 'react';
 import './LandingPage.css';
 import NavBar from '../../Components/NavBar/NavBar';
-import Header from '../../Components/NavBar/Header/Header';
+import Header from '../../Components/Header'
 
 function LandingPage() {
   return (
