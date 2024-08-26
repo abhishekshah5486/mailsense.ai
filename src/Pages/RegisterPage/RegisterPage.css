@@ -1,0 +1,231 @@
+.log-in-page-header {
+    background-color: rgba(0, 0, 0, 1);
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+
+    .spotify-logo{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img{
+            height: 50px;
+            width: 50px;
+        }
+        h1{
+            color: white;
+            font-size: 25px;
+        }
+    }
+}
+.invert {
+    filter: invert(1);
+}
+.spotify-logo-svg {
+    height: 32px;
+    margin-left: 40px;
+}
+.sign-up-form-section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    padding-top: 50px;
+}
+.sign-up-form {
+    height: 100%;
+    width: 328px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sign-up-form-heading {
+    font-weight: bold;
+    font-size: 23px;
+    color: white;
+}
+.sign-up-form .user-email {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.sign-up-form .user-password{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.user-email h4 {
+    font-weight: bold;
+    font-size: 14.5px;
+    position: relative;
+    margin-top: 2.8rem;
+    color: white;
+}
+.user-password h4 {
+    font-weight: bold;
+    font-size: 14.5px;
+    position: relative;
+    margin-top: 1rem;
+    color: white;
+}
+.email-input {
+    height: 48px;
+    width: 328px;
+    background-color: #121212;
+    border: 1px solid #727272;
+    border-radius: 3px;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 15px;
+    color: white;
+}
+.user-password .password-input {
+    height: 48px;
+    width: 328px;
+    background-color: #121212;
+    border: 1px solid #727272;
+    border-radius: 3px;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 15px;
+    color: white;
+}
+.email-input::placeholder {
+    color: #a7a7a7;
+}
+.password-input::placeholder {
+    color: #a7a7a7;
+}
+.email-input:hover {
+    cursor: pointer;
+    border: 1px solid white;
+}
+.password-input:hover {
+    cursor: pointer;
+    border: 1px solid white;
+}
+.username-email p {
+    font-size: 14.5px;
+    color: #1cd760;
+    text-decoration: underline;
+}
+.signup-button .signup-btn {
+    height: 48px;
+    width: 328px;
+    outline: none;
+    border: none;
+    background: linear-gradient(to bottom,  rgba(62, 86, 207, 1), rgba(80, 7, 192, 1));
+    color: white;
+    border-radius: 25px;
+    font-weight: 550;
+    font-size: 16.5px;
+    margin-top: 20px;
+}
+.signup-btn:hover {
+    background-color: #20e267;
+}
+.horizontal-rule {
+    width: 100%;
+    border: 1px solid #727272;
+    margin-top: 40px;
+}
+.or-div {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    bottom: 19px;
+    color: white;
+}
+.log-in-accounts {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+.xR230zZLI {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.xR230zZTp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xR230zZTp  h3 {
+    font-size: 17px;
+    color: #e6e6e6;
+}
+.log-in-accounts ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.log-in-accounts ul li {
+    list-style: none;
+}
+.log-in-accounts ul li button {
+    outline: none;
+    border: 1px solid #727272;
+    background-color: #121212;
+    border-radius: 25px;
+    width: 328px;
+    height: 48px;
+}
+.log-in-accounts button:hover {
+    cursor: pointer;
+    border: 1px solid white;
+}
+.new-google-icon,.facebook-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.vBGH009Lk {
+    border: 1px solid #292929;
+    margin-top: 30px;
+}
+
+.log-in-account {
+    margin-top: 30px;
+    display: flex;
+    gap: 5px;
+}
+#xZA009Tz {
+    font-weight: 500;
+    font-size: 15px;
+    color: #a7a7a7;
+}
+#xZA009Ta {
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: underline;
+}
+#xZA009Ta:hover {
+    cursor: pointer;
+}
+.terms-conditions {
+    width: 328px;
+    text-align: center;
+    padding: 10px;
+}
+.terms-conditions p {
+    color: #a7a7a7;
+    font-size: 12px;
+}
+.link{
+    color: rgba(118, 120, 255, 1);
+}
