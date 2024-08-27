@@ -3,8 +3,10 @@ import './LoginPage.css';
 import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import googleIcon from '../../Assets/Images/google.png';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
+
     return (
         <div class="log-in-page">
             <div class="log-in-page-header">
