@@ -18,6 +18,7 @@ function LoginPage() {
                 password
             }
             const response = await loginUser(values);
+            console.log(response.user);
             if (response.success){
                 alert('Login successful');
                 navigate('/home');

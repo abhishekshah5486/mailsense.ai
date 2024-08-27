@@ -2,13 +2,21 @@ import React from 'react';
 import './HomeNavBar.css';
 import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import { useNavigate } from 'react-router-dom';
-import authService from '../../appwrite/auth';
+import { logoutUser } from '../../APICalls/users';
 
 function HomeNavBar() {
     const navigate = useNavigate();
     const handleLogOut = async () => {
-        await authService.logoutCurrentUser();
-        navigate('/');
+        try {
+            const response = await logoutUser();
+            if (response.success) {
+                navigate('/');
+            } else {
+                alert(response.message);
+            }
+        } catch (err) {
+            console.log(err);
+        }
     }
     return (
         <div className='landing-page-navbar'>
