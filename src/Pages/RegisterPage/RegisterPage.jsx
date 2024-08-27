@@ -11,7 +11,7 @@ function RegisterPage() {
     const [password, setPassword] = React.useState('');
     const navigate = useNavigate();
 
-    const handleCreateAccount = async (email, password) => {
+    const handleCreateAccount = async () => {
         const userAccount = await authService.createAccount(email, password);
         if (userAccount){
             navigate('/users/login');
@@ -49,7 +49,7 @@ function RegisterPage() {
                         />
                     </div>
                     <div class="signup-button">
-                        <button class="signup-btn" onClick={() => handleCreateAccount(email, password)}>Sign Up</button>
+                        <button class="signup-btn" onClick={() => handleCreateAccount()}>Sign Up</button>
                     </div>
                     <div class="horizontal-rule"></div>
                     <div class="or-div">or</div>

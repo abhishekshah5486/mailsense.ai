@@ -11,7 +11,7 @@ function LoginPage() {
     const [password, setPassword] = React.useState('');
     const navigate = useNavigate(); 
 
-    const handleLoginLogic = async (email, password) => {
+    const handleLoginLogic = async () => {
         const userAccount = await authService.loginAccount(email, password);
         if (userAccount){
             navigate('/home');
@@ -63,7 +63,7 @@ function LoginPage() {
                             />
                         </div>
                         <div class="log-in-button">
-                            <button class="log-in-btn" onClick={() => handleLoginLogic(email, password)}>Log in</button>
+                            <button class="log-in-btn" onClick={() => handleLoginLogic()}>Log in</button>
                         </div>
                     </div>
                     <div class="horizontal-line"></div>

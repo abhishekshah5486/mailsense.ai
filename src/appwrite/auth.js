@@ -42,8 +42,8 @@ export class AuthService{
     async checkAuthState(){
         try {
             const user = await this.account.get();
-            if (user) return true;
-            else return false;
+            if (user) return user;
+            else return null;
         } catch (err) {
             throw err;
         }
