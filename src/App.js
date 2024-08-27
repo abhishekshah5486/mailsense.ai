@@ -12,15 +12,15 @@ function App() {
     const navigate = useNavigate();
     const [loading , setLoading] = useState(true);
 
-    // useEffect(() => {
-    //   const autoRedirect = async () => {
-    //     const user = await authService.checkAuthState();
-    //     if (user){
-    //       navigate('/home');
-    //     }
-    //   }
-    //   autoRedirect();
-    // }, [navigate]);
+    useEffect(() => {
+      const autoRedirect = async () => {
+        const user = await authService.checkAuthState();
+        if (user){
+          navigate('/home');
+        }
+      }
+      autoRedirect();
+    }, [navigate]);
 
     useEffect(() => {
       setTimeout(() => {
