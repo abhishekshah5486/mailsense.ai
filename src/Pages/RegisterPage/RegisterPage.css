@@ -127,6 +127,7 @@
     margin-top: 20px;
 }
 .signup-btn:hover {
+    cursor: pointer;
     background-color: #20e267;
 }
 .horizontal-rule {
