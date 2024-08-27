@@ -7,20 +7,10 @@ import {Routes, Route, Link } from 'react-router-dom';
 import UserContextProvider from './Context/UserContextProvider';
 import { useNavigate } from 'react-router-dom';
 import { useEffect , useState } from 'react';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 function App() {
-    const navigate = useNavigate();
     const [loading , setLoading] = useState(true);
-
-    // useEffect(() => {
-    //   const autoRedirect = async () => {
-    //     const user = await authService.checkAuthState();
-    //     if (user){
-    //       navigate('/home');
-    //     }
-    //   }
-    //   autoRedirect();
-    // }, [navigate]);
 
     useEffect(() => {
       setTimeout(() => {
@@ -37,7 +27,7 @@ function App() {
               <Route path='/' element={<LandingPage/>} />
               <Route path='/users/register' element={<RegisterPage/>} />
               <Route path='/users/login' element={<LoginPage/>} />
-              <Route path='/home' element={ <HomePage/> } />
+              <Route path="/home" element={<ProtectedRoute><HomePage/></ProtectedRoute>} />
           </Routes>
       </UserContextProvider>
     );
