@@ -1,0 +1,135 @@
+.add-mailbox-container{
+    background-color: #171717;
+    border: 1px solid #363740;
+    border-radius: 8px;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+    top: 150px;
+    left: 30%;
+
+    .mail-vector-img{
+
+    }
+    .title{
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    .subtitle{
+        color: #94a3b8;
+        font-size: 13px;
+        font-weight: 500;
+        margin-top: 10px;
+        text-align: center;
+
+    }
+    .add-mailbox-btn{
+        cursor: pointer;
+        height: 40px;
+        background: linear-gradient(to right, rgba(75, 99, 221, 1), rgba(5, 36, 189, 1));
+        outline: none;
+        border: none;
+        color: white;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        img{
+            height: 15px;
+            width: 15px;
+        }
+    }
+}
+
+.add-gmail-outlook-account{
+    background-color: #171717;
+    border: 1px solid #363740;
+    border-radius: 8px;
+    width: 40vw;
+    height: 50vh;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+    top: 150px;
+    left: 30%;
+
+    .title{
+        color: white;
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .add-gmail-account{
+        height: 50px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 1);
+        border-radius: 25px;
+        border: 1px solid rgba(124, 124, 124, 1);
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding-left: 50px;
+        gap: 30px;
+
+        img{
+            height: 24px;
+            width: 24px;
+        }
+        h2{
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    .add-gmail-account:hover{
+        cursor: pointer;
+        border: 1px solid white;
+    }
+    .add-outlook-account{
+        height: 50px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 1);
+        border-radius: 25px;
+        border: 1px solid rgba(124, 124, 124, 1);
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding-left: 50px;
+        gap: 30px;
+
+        img{
+            height: 24px;
+            width: 24px;
+        }
+        h2{
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    .add-outlook-account:hover{
+        cursor: pointer;
+        border: 1px solid white;
+    }
+}

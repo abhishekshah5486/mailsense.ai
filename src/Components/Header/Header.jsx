@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 function Header() {
     const spanStyle = {
@@ -13,7 +14,7 @@ function Header() {
                 <p className="description">Maximize your productivity with Intelli-Mailer's intelligent email automation. Seamlessly connect your Gmail and Outlook accounts, automatically categorize emails, and send smart replies to boost engagement and save time.</p>
             </div>
             <div className="header-section-btm-content">
-                <button className='cta-button'>Get Started Now</button>
+                <Link to='/users/register'><button className='cta-button'>Get Started Now</button></Link>
                 <div class="features-container">
                     <div class="feature">
                         No credit card required

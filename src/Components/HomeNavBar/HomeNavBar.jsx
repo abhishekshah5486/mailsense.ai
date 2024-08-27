@@ -1,9 +1,9 @@
 import React from 'react';
-import './NavBar.css';
+import './HomeNavBar.css';
 import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+function HomeNavBar() {
   return (
     <div className='landing-page-navbar'>
         <div className="navbar-logo">
@@ -11,11 +11,10 @@ function NavBar() {
             <h1>MAILSENSE</h1>
         </div>
         <div className="navbar-right-content">
-            <Link to='/users/login'><h2>Log in</h2></Link>
-            <Link to='/users/register'><button className='get-started-now'>Get Started Now</button></Link>
+            <Link to='/'><h2>Log out</h2></Link>
         </div>
     </div>
   )
 }
 
-export default NavBar;
+export default HomeNavBar;
