@@ -15,11 +15,11 @@ function Header() {
             </div>
             <div className="header-section-btm-content">
                 <Link to='/users/register'><button className='cta-button'>Get Started Now</button></Link>
-                <div class="features-container">
-                    <div class="feature">
+                <div className="features-container">
+                    <div className="feature">
                         No credit card required
                     </div>
-                    <div class="feature">
+                    <div className="feature">
                         7-Day Free Trial
                     </div>
                 </div>

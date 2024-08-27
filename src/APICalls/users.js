@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 import axiosInstance from "./index.js";
 
 // Register a new user
@@ -34,10 +34,10 @@ export const loginUser = async (value) => {
 }
 
 // Logout a current session user
-export const logoutUser = async () => {
+export const logoutUser = async (userId) => {
     try {
         // Need to pass the userId
-        const response = await axiosInstance.post('/users/logout/');
+        const response = await axiosInstance.post(`/users/logout/${userId}`);
         return response.data;
     } catch (err) {
         if (err.response) {

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './LoginPage.css';
 import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import googleIcon from '../../Assets/Images/google.png';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../APICalls/users';
+import UserContext from '../../Context/UserContext';
 
 function LoginPage() {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const navigate = useNavigate(); 
+    const {setCurrentUser} = useContext(UserContext);
 
     const handleLoginLogic = async () => {
         try {
@@ -18,9 +20,13 @@ function LoginPage() {
                 password
             }
             const response = await loginUser(values);
-            console.log(response.user);
             if (response.success){
                 alert('Login successful');
+                setCurrentUser({
+                    id: response.user.userId,
+                    email: response.user.email,
+                    isLoggedIn: response.user.isLoggedIn,
+                });
                 navigate('/home');
             }
             else alert(response.message);

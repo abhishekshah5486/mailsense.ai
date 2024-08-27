@@ -3,13 +3,18 @@ import './HomeNavBar.css';
 import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import { useNavigate } from 'react-router-dom';
 import { logoutUser } from '../../APICalls/users';
+import UserContext from '../../Context/UserContext';
+import { useContext } from 'react';
 
 function HomeNavBar() {
+    const { currentUser, setCurrentUser } = useContext(UserContext);
     const navigate = useNavigate();
     const handleLogOut = async () => {
         try {
-            const response = await logoutUser();
+            console.log(currentUser);
+            const response = await logoutUser(currentUser.id);
             if (response.success) {
+                setCurrentUser(null);
                 navigate('/');
             } else {
                 alert(response.message);
