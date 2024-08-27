@@ -3,8 +3,20 @@ import './RegisterPage.css';
 import googleIcon from '../../Assets/Images/google.png';
 import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import authService from '../../appwrite/auth';
 
 function RegisterPage() {
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const navigate = useNavigate();
+
+    const handleCreateAccount = async (email, password) => {
+        const userAccount = await authService.createAccount(email, password);
+        if (userAccount){
+            navigate('/users/login');
+        }
+    }
     return (
         <>
             <div class="log-in-page">
@@ -22,14 +34,22 @@ function RegisterPage() {
                     </div>
                     <div class="user-email">
                         <h4>Email address</h4>
-                        <input type="email" class="email-input" placeholder="name@domain.com" />
+                        <input type="email" 
+                        class="email-input" 
+                        placeholder="name@domain.com" 
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
                     </div>
                     <div class="user-password">
                         <h4>Password</h4>
-                        <input type="password" class="password-input" placeholder="Password" />
+                        <input type="password" 
+                        class="password-input" 
+                        placeholder="Password" 
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
                     </div>
                     <div class="signup-button">
-                        <button class="signup-btn">Sign Up</button>
+                        <button class="signup-btn" onClick={() => handleCreateAccount(email, password)}>Sign Up</button>
                     </div>
                     <div class="horizontal-rule"></div>
                     <div class="or-div">or</div>
