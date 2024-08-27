@@ -4,9 +4,19 @@ import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import googleIcon from '../../Assets/Images/google.png';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import authService from '../../appwrite/auth';
 
 function LoginPage() {
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const navigate = useNavigate(); 
 
+    const handleLoginLogic = async (email, password) => {
+        const userAccount = await authService.loginAccount(email, password);
+        if (userAccount){
+            navigate('/home');
+        }
+    }
     return (
         <div class="log-in-page">
             <div class="log-in-page-header">
@@ -38,14 +48,22 @@ function LoginPage() {
                     <div class="log-in-form">
                         <div class="username-email">
                             <h4>Email or username</h4>
-                            <input type="email" class="username-input" placeholder="Email or username" />
+                            <input type="email" 
+                            class="username-input" 
+                            placeholder="Email or username" 
+                            onChange={(e) => setEmail(e.target.value)}
+                            />
                         </div>
                         <div class="password">
                             <h4>Password</h4>
-                            <input type="email" class="password-input" placeholder="Password" />
+                            <input type="email" 
+                            class="password-input" 
+                            placeholder="Password" 
+                            onChange={(e) => setPassword(e.target.value)}
+                            />
                         </div>
                         <div class="log-in-button">
-                            <button class="log-in-btn">Log in</button>
+                            <button class="log-in-btn" onClick={() => handleLoginLogic(email, password)}>Log in</button>
                         </div>
                     </div>
                     <div class="horizontal-line"></div>
