@@ -11,10 +11,11 @@ function HomeNavBar() {
     const navigate = useNavigate();
     const handleLogOut = async () => {
         try {
-            console.log(currentUser);
             const response = await logoutUser(currentUser.id);
             if (response.success) {
                 setCurrentUser(null);
+                // Remove the current user from localstorage on logout
+                localStorage.removeItem('currentUser');
                 navigate('/');
             } else {
                 alert(response.message);

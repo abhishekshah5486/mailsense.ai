@@ -23,7 +23,7 @@ export default function AddMailBox() {
                 const redirectUrl = response.googleOAuthUrl;
                 window.location.href = redirectUrl;
             }
-            else alert(`Failed to initiate OAuth flow: ${redirectUrl.message}`);
+            else alert(`Failed to initiate OAuth flow: ${response.message}`);
         } catch (err) {
             console.error('Error during OAuth flow initiation:', err);
             alert('An unexpected error occurred while trying to initiate the OAuth flow. Please try again.'); 

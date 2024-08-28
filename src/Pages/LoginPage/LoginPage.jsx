@@ -22,11 +22,14 @@ function LoginPage() {
             const response = await loginUser(values);
             if (response.success){
                 alert('Login successful');
-                setCurrentUser({
+                const userData = {
                     id: response.user.userId,
                     email: response.user.email,
                     isLoggedIn: response.user.isLoggedIn,
-                });
+                };
+                setCurrentUser(userData);
+                // Persisting current user using localstorage
+                localStorage.setItem('currentUser', JSON.stringify(userData));
                 navigate('/home');
             }
             else alert(response.message);
