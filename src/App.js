@@ -5,15 +5,12 @@ import LoginPage from './Pages/LoginPage';
 import HomePage from './Pages/HomePage';
 import {Routes, Route, Link } from 'react-router-dom';
 import UserContextProvider from './Context/UserContextProvider';
-import { useNavigate } from 'react-router-dom';
 import { useEffect , useState } from 'react';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
-import UserContext from './Context/UserContext';
-import { useContext } from 'react';
 
 function App() {
     const [loading , setLoading] = useState(true);
-    
+
     useEffect(() => {
       setTimeout(() => {
         setLoading(false);
