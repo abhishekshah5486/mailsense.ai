@@ -3,6 +3,7 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import RegisterPage from './Pages/RegisterPage';
 import LoginPage from './Pages/LoginPage';
 import HomePage from './Pages/HomePage';
+import UserEmailAccountsPage from './Pages/UserEmailAccountsPage';
 import {Routes, Route, Link } from 'react-router-dom';
 import UserContextProvider from './Context/UserContextProvider';
 import { useEffect , useState } from 'react';
@@ -26,6 +27,7 @@ function App() {
               <Route path='/' element={<LandingPage/>} />
               <Route path='/users/register' element={<RegisterPage/>} />
               <Route path='/users/login' element={<LoginPage/>} />
+              <Route path='/home/email-accounts' element={<UserEmailAccountsPage/>} />
               <Route path="/home" element={<ProtectedRoute><HomePage/></ProtectedRoute>} />
           </Routes>
       </UserContextProvider>
