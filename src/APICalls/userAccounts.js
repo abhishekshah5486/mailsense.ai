@@ -10,7 +10,8 @@ export const retrieveAllUserAccountsByUserId = async (userId) => {
         }
         return {
             success: false,
-            message: 'An error occurred'
+            message: 'An error occurred',
+            error: err.message
         }
-    }
+    } 
 }

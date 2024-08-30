@@ -2,4 +2,127 @@
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 1);
+
+    .error-message{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10rem;
+
+        h1{
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: rgba(118, 120, 255, 1);
+        }
+
+        h2{
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    }
+    .add-account-container{
+        height: 5vh;
+        width: 100%;
+        background-color: #101010;
+        border-bottom: 1px solid #363740;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 35px;
+        padding-right: 100px;
+
+        .add-new-account-btn{
+            background: linear-gradient(to right, rgba(75, 99, 221, 1), rgba(5, 36, 189, 1));
+            height: 40px;
+            outline: none;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            img {
+                height: 13px;
+                width: 13px;
+            }
+            h2{
+                font-size: 15px;
+                font-weight: 600;
+            }
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            gap: 8px;
+        }
+        .add-new-account-btn:hover{
+            cursor: pointer;
+        }
+    }
+    .authenticated-accounts{
+        position: relative;
+        width: 50vw;
+        top: 100px;
+        left: 25%;
+        .email-accounts{
+            min-height: 20vh;
+            width: 50vw;
+            height: auto;
+        }
+    
+        .accounts-header{
+            width: 50vw;
+            height: 5vh;
+            background-color: #171717;
+            border: 1px solid #363740;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            gap: 300px;
+            h2{
+                color: #94a3b8;
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+        
+        .email-accounts{
+            .email-account{
+                height: 8vh;
+                width: 100%;
+                color: #b3b3b3;
+                display: flex;
+                align-items: center;
+                gap: 300px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-bottom: 1px solid #363740;
+
+                .email{
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+                .service-provider{
+                    height: 20px;
+                    width: 20px;
+                }
+
+                .disconnect-account-btn{
+                    outline: none;
+                    border: none;
+                    background-color: #95050f;
+                    color: white;
+                    font-size: 15px;
+                    font-weight: 500;
+                    padding: 8px;
+                    border-radius: 8px;
+                }
+                .disconnect-account-btn:hover{
+                    cursor: pointer;
+                    background-color: #69040b;
+                }
+            }
+        }
+    }
 }
