@@ -4,7 +4,7 @@
     border-radius: 8px;
     width: 40vw;
     height: 50vh;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;

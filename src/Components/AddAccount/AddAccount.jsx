@@ -1,10 +1,12 @@
-import React, {useRef} from 'react';
+import React, {useRef, useContext} from 'react';
 import googleIcon from '../../Assets/Images/google.png';
 import outlookIcon from '../../Assets/Icons/outlook-icon.svg';
 import { initiateOAuth2Flow } from '../../APICalls/gmailAuth';
+import UserContext from '../../Context/UserContext';
 import './AddAccount.css';
 
 function AddAccount() {
+    const { currentUser } = useContext(UserContext);
     const addAccountRef = useRef();
     const handleAddGmailAccount = async () => {
         try {

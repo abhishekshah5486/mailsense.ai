@@ -6,8 +6,8 @@ import './UserEmailAccountsPage.css';
 function UserEmailAccountsPage() {
     return (
         <div className='user-email-accounts-page'>
-            <HomeNavBar/>
-            <AddMailBox/>
+            {/* <HomeNavBar/>
+            <AddMailBox/> */}
         </div>
     )
 }

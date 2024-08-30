@@ -28,9 +28,8 @@ function App() {
               <Route path='/' element={<LandingPage/>} />
               <Route path='/users/register' element={<RegisterPage/>} />
               <Route path='/users/login' element={<LoginPage/>} />
-              <Route path='/home/email-accounts' element={<UserEmailAccountsPage/>} />
-              <Route path='/home/add-account' element={<AddAccountPage/>} />
-              <Route path="/home" element={<ProtectedRoute><HomePage/></ProtectedRoute>} />
+              <Route path="/home/email-accounts" element={<ProtectedRoute><UserEmailAccountsPage/></ProtectedRoute>} />
+              <Route path="/home/add-account" element={<ProtectedRoute><AddAccountPage/></ProtectedRoute>} />
           </Routes>
       </UserContextProvider>
     );

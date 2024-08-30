@@ -30,7 +30,7 @@ function LoginPage() {
                 setCurrentUser(userData);
                 // Persisting current user using localstorage
                 localStorage.setItem('currentUser', JSON.stringify(userData));
-                navigate('/home');
+                navigate('/home/email-accounts');
             }
             else alert(response.message);
         } catch (err) {
