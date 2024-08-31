@@ -22,12 +22,6 @@ function LoginPage() {
             const response = await loginUser(values);
             if (response.success){
                 alert('Login successful');
-                const userData = {
-                    id: response.user.userId,
-                    email: response.user.email,
-                    isLoggedIn: response.user.isLoggedIn,
-                };
-                setCurrentUser(userData);
                 // Set the token received in response to local storage
                 localStorage.setItem('token', response.jwtToken);
                 navigate('/home/email-accounts');
