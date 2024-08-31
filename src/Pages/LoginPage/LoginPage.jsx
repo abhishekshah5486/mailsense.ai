@@ -28,8 +28,8 @@ function LoginPage() {
                     isLoggedIn: response.user.isLoggedIn,
                 };
                 setCurrentUser(userData);
-                // Persisting current user using localstorage
-                localStorage.setItem('currentUser', JSON.stringify(userData));
+                // Set the token received in response to local storage
+                localStorage.setItem('token', response.jwtToken);
                 navigate('/home/email-accounts');
             }
             else alert(response.message);
