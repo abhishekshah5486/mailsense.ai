@@ -10,7 +10,7 @@ function AddAccount() {
     const addAccountRef = useRef();
     const handleAddGmailAccount = async () => {
         try {
-            const response = await initiateOAuth2Flow(currentUser.id);
+            const response = await initiateOAuth2Flow(currentUser.userId);
             if (response.success) {
                 const redirectUrl = response.googleOAuthUrl;
                 window.location.href = redirectUrl;

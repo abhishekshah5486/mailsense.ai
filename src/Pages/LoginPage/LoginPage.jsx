@@ -6,12 +6,17 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../APICalls/users';
 import UserContext from '../../Context/UserContext';
+import { getCurrentUser } from '../../APICalls/userAccounts';
 
 function LoginPage() {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const navigate = useNavigate(); 
-    const {currentUser} = useContext(UserContext);
+    const {currentUser, setCurrentUser} = useContext(UserContext);
+
+    useEffect(() => {
+
+    }, []);
 
     useEffect(() => { 
         if (currentUser){
@@ -29,7 +34,14 @@ function LoginPage() {
             if (response.success){
                 alert('Login successful');
                 // Set the token received in response to local storage
-                localStorage.setItem('token', response.jwtToken);
+                const userData = {
+                    userId: response.user.userId,
+                    email: response.user.email,
+                    isLoggedIn: response.user.isLoggedIn,
+                };
+                setCurrentUser(userData);
+                // Persisting current user using localstorage
+                localStorage.setItem('currentUser', JSON.stringify(userData));
                 navigate('/home/email-accounts');
             }
             else alert(response.message);

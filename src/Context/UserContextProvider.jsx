@@ -3,25 +3,18 @@ import UserContext from "./UserContext";
 import { getCurrentUser } from "../APICalls/userAccounts";
 
 const UserContextProvider = ({children}) => {
-    const [currentUser, setCurrentUser] = useState(null);
+    const [currentUser, setCurrentUser] = useState(() => {
+        const storedUser = localStorage.getItem('currentUser');
+        return storedUser ? JSON.parse(storedUser) : null;
+    });
     // Whenever currentUser changes, update localStorage
     useEffect(() => {
-        const fetchCurrentUser = async () => {
-            try {
-                const response = await getCurrentUser();
-                console.log(response);
-                if (response && response.success){
-                    const currentUser = response.user;
-                    setCurrentUser(currentUser);
-                }
-                else setCurrentUser(null);
-            } catch (err) {
-                console.log(err.message);
-                setCurrentUser(null);
-            }
+        if (currentUser) {
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        } else {
+            localStorage.removeItem('currentUser');
         }
-        fetchCurrentUser();
-    }, []);
+    }, [currentUser]);
 
     return (
         <UserContext.Provider value={{currentUser, setCurrentUser}}>

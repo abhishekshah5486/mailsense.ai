@@ -8,6 +8,7 @@ import microsoftIcon from '../../Assets/Icons/microsoft.png';
 import { retrieveAllUserAccountsByUserId } from '../../APICalls/userAccounts';
 import './UserEmailAccountsPage.css';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function UserEmailAccountsPage() {
     const {currentUser} = useContext(UserContext);
@@ -16,6 +17,15 @@ function UserEmailAccountsPage() {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     
+    useEffect(() => {
+        const alertMessage = Cookies.get('alert');
+        if (alertMessage){
+            alert(alertMessage);
+            // Remove the cookie after reading it
+            Cookies.remove('alert');
+        }
+    }, [navigate])
+
     const handleAddMailboxClick = () => {
         navigate('/home/add-account');
     }
@@ -65,14 +75,14 @@ function UserEmailAccountsPage() {
     return (
         <div className='user-email-accounts-page'>
             <HomeNavBar/>
-            {emailAccounts && <div className="add-account-container">
+            {(emailAccounts && emailAccounts.length > 0) && (<div className="add-account-container">
                 <button className='add-new-account-btn' onClick={handleAddMailboxClick}>
                     <img src={AddIcon} alt="" />
                     <h2>Add New Mailbox</h2>
                 </button>
-            </div>}
+            </div>)}
             {(
-                emailAccounts  ?
+                (emailAccounts && emailAccounts.length > 0) ?
                 <div className='authenticated-accounts'>
                     <div className="accounts-header">
                         <h2>EMAIL ACCOUNT</h2>
