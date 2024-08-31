@@ -14,8 +14,8 @@ function HomeNavBar() {
             const response = await logoutUser(currentUser.id);
             if (response.success) {
                 setCurrentUser(null);
-                // Remove the current user from localstorage on logout
-                localStorage.removeItem('currentUser');
+                // Remove the token from local storage
+                localStorage.removeItem('token');
                 navigate('/');
             } else {
                 alert(response.message);

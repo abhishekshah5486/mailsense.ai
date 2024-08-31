@@ -9,6 +9,7 @@ const UserContextProvider = ({children}) => {
         const fetchCurrentUser = async () => {
             try {
                 const response = await getCurrentUser();
+                console.log(response);
                 if (response && response.success){
                     const currentUser = response.user;
                     setCurrentUser(currentUser);

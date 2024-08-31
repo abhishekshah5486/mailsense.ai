@@ -1,16 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './RegisterPage.css';
 import googleIcon from '../../Assets/Images/google.png';
 import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../APICalls/users';
+import UserContext from '../../Context/UserContext';
 
 function RegisterPage() {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const navigate = useNavigate();
+    const { currentUser } = React.useContext(UserContext);
 
+    useEffect(() => { 
+      if (currentUser){
+        navigate('/home/email-accounts');
+      }
+    }, [currentUser, navigate])
+  
     const handleCreateAccount = async () => {
         try {
             const values = {

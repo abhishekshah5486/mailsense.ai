@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import './LoginPage.css';
 import intelliMailerLogo from '../../Assets/Images/reachinbox_ai_logo.jpeg';
 import googleIcon from '../../Assets/Images/google.png';
@@ -11,8 +11,14 @@ function LoginPage() {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const navigate = useNavigate(); 
-    const {setCurrentUser} = useContext(UserContext);
+    const {currentUser} = useContext(UserContext);
 
+    useEffect(() => { 
+        if (currentUser){
+          navigate('/home/email-accounts');
+        }
+    }, [currentUser, navigate])
+    
     const handleLoginLogic = async () => {
         try {
             const values = {

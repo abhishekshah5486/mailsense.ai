@@ -23,7 +23,7 @@ function UserEmailAccountsPage() {
     useEffect(() => {
         const fetchUserAccounts = async () => {
             try {
-                const response = await retrieveAllUserAccountsByUserId(currentUser.id);
+                const response = await retrieveAllUserAccountsByUserId(currentUser.userId);
                 if (response.success){
                     setEmailAccounts(response.userAccounts);
                 } else {

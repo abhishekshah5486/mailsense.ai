@@ -98,17 +98,24 @@
                 padding-left: 10px;
                 padding-right: 10px;
                 border-bottom: 1px solid #363740;
+                border-right: 1px solid #363740;
+                border-left: 1px solid #363740;
+                position: relative;
 
                 .email{
                     font-size: 15px;
                     font-weight: 400;
                 }
                 .service-provider{
+                    position: absolute;
+                    right: 250px;
                     height: 20px;
                     width: 20px;
                 }
 
                 .disconnect-account-btn{
+                    position: absolute;
+                    right: 10px;
                     outline: none;
                     border: none;
                     background-color: #95050f;
