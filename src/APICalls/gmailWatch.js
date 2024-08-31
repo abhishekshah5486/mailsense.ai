@@ -3,7 +3,7 @@ import axiosInstance from "./index.js";
 export const removeUserAccountFromGmailWatchByEmail = async (email) => {
     try {
         const response = await axiosInstance.delete('/gmail/watch/remove', {
-            email: email
+            params: { email: email }
         });
         return response.data;
     } catch (err) {

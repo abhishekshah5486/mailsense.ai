@@ -6,6 +6,7 @@ import AddIcon from '../../Assets/Icons/AddIcon.svg';
 import googleIcon from '../../Assets/Icons/google.png';
 import microsoftIcon from '../../Assets/Icons/microsoft.png';
 import { retrieveAllUserAccountsByUserId } from '../../APICalls/userAccounts';
+import { removeUserAccountFromGmailWatchByEmail } from '../../APICalls/gmailWatch';
 import './UserEmailAccountsPage.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
@@ -28,6 +29,25 @@ function UserEmailAccountsPage() {
 
     const handleAddMailboxClick = () => {
         navigate('/home/add-account');
+    }
+
+    // Handle disconnect button click
+    const handleDisconnectBtnClick = async (accountEmail) => {
+        try {
+            const response = await removeUserAccountFromGmailWatchByEmail(accountEmail);
+            // Error handling
+            if (response.success){
+                alert('Account disconnected successfully');
+                // Reload the page
+                window.location.reload();
+            }
+            else {
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            console.error('Unexpected error disconnecting account:', err);
+            alert('An unexpected error occurred. Please try again.');
+        }
     }
 
     useEffect(() => {
@@ -100,7 +120,7 @@ function UserEmailAccountsPage() {
                                         ) : (
                                             <img src={microsoftIcon} className='service-provider' alt="Microsoft Icon" />
                                         )}
-                                        <button className='disconnect-account-btn'>Disconnect</button>
+                                        <button className='disconnect-account-btn' onClick={() => handleDisconnectBtnClick(account.accountEmail)}>Disconnect</button>
                                     </div>
                                 )
                             })
