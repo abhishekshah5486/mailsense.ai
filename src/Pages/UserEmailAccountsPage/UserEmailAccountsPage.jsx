@@ -10,13 +10,16 @@ import { removeUserAccountFromGmailWatchByEmail } from '../../APICalls/gmailWatc
 import './UserEmailAccountsPage.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import Loader from '../../Components/Loader';
 
 function UserEmailAccountsPage() {
     const {currentUser} = useContext(UserContext);
     const [emailAccounts, setEmailAccounts] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [disconnectLoading, setDisconnectLoading] = useState(null);
     const navigate = useNavigate();
+    const disconnectBtnRef = React.useRef();
     
     useEffect(() => {
         const alertMessage = Cookies.get('alert');
@@ -34,6 +37,10 @@ function UserEmailAccountsPage() {
     // Handle disconnect button click
     const handleDisconnectBtnClick = async (accountEmail) => {
         try {
+            setDisconnectLoading(accountEmail);
+            if (disconnectBtnRef.current) {
+                disconnectBtnRef.current.style.backgroundColor = '#420206';
+            }
             const response = await removeUserAccountFromGmailWatchByEmail(accountEmail);
             // Error handling
             if (response.success){
@@ -47,6 +54,11 @@ function UserEmailAccountsPage() {
         } catch (err) {
             console.error('Unexpected error disconnecting account:', err);
             alert('An unexpected error occurred. Please try again.');
+        } finally {
+            setDisconnectLoading(null);
+            if (disconnectBtnRef.current) {
+                disconnectBtnRef.current.style.backgroundColor = '#95050f';
+            }
         }
     }
 
@@ -120,7 +132,18 @@ function UserEmailAccountsPage() {
                                         ) : (
                                             <img src={microsoftIcon} className='service-provider' alt="Microsoft Icon" />
                                         )}
-                                        <button className='disconnect-account-btn' onClick={() => handleDisconnectBtnClick(account.accountEmail)}>Disconnect</button>
+                                        <button 
+                                        className='disconnect-account-btn'
+                                        onClick={() => handleDisconnectBtnClick(account.accountEmail)} 
+                                        disabled={disconnectLoading === account.accountEmail}
+                                        ref={disconnectBtnRef}
+                                        >{disconnectLoading === account.accountEmail ?
+                                            <div className='loader-text-container'>
+                                                <Loader />
+                                                <span className='disconnect-text'>Disconnect</span>
+                                            </div>
+                                            : 'Disconnect'}
+                                        </button>
                                     </div>
                                 )
                             })
@@ -135,6 +158,8 @@ function UserEmailAccountsPage() {
 }
 
 export default UserEmailAccountsPage;
+
+
 
 
          

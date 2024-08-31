@@ -124,6 +124,15 @@
                     font-weight: 500;
                     padding: 8px;
                     border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    .loader-text-container{
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
                 }
                 .disconnect-account-btn:hover{
                     cursor: pointer;
