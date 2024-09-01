@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 .intelli-mail-landing-page {
-    background-color: rgba(0, 0, 0, 1);
+    /* background-color: rgba(0, 0, 0, 1); */
+    background-color: #1f173b;
     height: 100vh;
     width: 100vw;
 }

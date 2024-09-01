@@ -63,20 +63,7 @@ function LoginPage() {
                     <div className="log-in-page-heading">
                         <h1>Log in to MailSense</h1>
                     </div>
-                    <div className="log-in-accounts">
-                        <ul>
-                            <li className="google-login">
-                                <button className="google-login-btn">
-                                    <div className="google-login-div xR230zZLI">
-                                        <img src={googleIcon} alt="" className="new-google-icon" />
-                                        <div className="xR230zZTp">
-                                            <h3>Continue with Google</h3>
-                                        </div>   
-                                    </div>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
+    
                     <div className="horizontal-line"></div>
                     <div className="log-in-form">
                         <div className="username-email">
@@ -103,7 +90,7 @@ function LoginPage() {
                     <div className="create-account">
                         <h3 id="xZA009Tz">Don't have an account?</h3>
                         <h3 id="xZA009Ta">
-                            <Link to="/users/register" className='link'>Sign up for Spotify</Link>
+                            <Link to="/users/register" className='link'>Sign up for Mailsense</Link>
                         </h3>
                     </div>
                 </div>

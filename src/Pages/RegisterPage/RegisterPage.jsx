@@ -41,8 +41,8 @@ function RegisterPage() {
         <>
             <div className="log-in-page">
                 <div className="log-in-page-header">
-                    <div className="spotify-logo">
-                        <img className="invert spotify-logo-svg" src={intelliMailerLogo} alt="" />
+                    <div className="mailsense-logo">
+                        {/* <img className="invert mailsense-logo" src={intelliMailerLogo} alt="" /> */}
                         <h1>MAILSENSE</h1>
                     </div>
                 </div>
@@ -73,23 +73,7 @@ function RegisterPage() {
                     <div className="signup-button">
                         <button className="signup-btn" onClick={handleCreateAccount}>Sign Up</button>
                     </div>
-                    <div className="horizontal-rule"></div>
-                    <div className="or-div">or</div>
-
-                    <div className="log-in-accounts">
-                        <ul>
-                            <li className="google-login">
-                                <button className="google-login-btn">
-                                    <div className="google-login-div xR230zZLI">
-                                        <img src={googleIcon} alt="" className="new-google-icon" />
-                                        <div className="xR230zZTp">
-                                            <h3>Continue with Google</h3>
-                                        </div>   
-                                    </div>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
+    
                     <div className="horizontal-rule vBGH009Lk"></div>
                     <div className="log-in-account">
                         <h3 id="xZA009Tz">Already have an account?</h3>

@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
 
-    .spotify-logo{
+    .mailsense-logo{
         display: flex;
         align-items: center;
         gap: 10px;
@@ -22,7 +22,7 @@
 .invert {
     filter: invert(1);
 }
-.spotify-logo-svg {
+.mailsense-logo {
     height: 32px;
     margin-left: 40px;
 }
@@ -32,7 +32,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #121212;
+    /* background-color: #121212; */
+    background-color: #1e173a;
     padding-top: 50px;
 }
 .sign-up-form {
@@ -45,7 +46,8 @@
 .sign-up-form-heading {
     font-weight: bold;
     font-size: 23px;
-    color: white;
+    /* color: white; */
+    color: #1cd760;
 }
 .sign-up-form .user-email {
     display: flex;
@@ -119,8 +121,10 @@
     width: 328px;
     outline: none;
     border: none;
-    background: linear-gradient(to bottom,  rgba(62, 86, 207, 1), rgba(80, 7, 192, 1));
-    color: white;
+    /* background: linear-gradient(to bottom,  rgba(62, 86, 207, 1), rgba(80, 7, 192, 1)); */
+    background-color: #1cd760;
+    /* color: white; */
+    color: black;
     border-radius: 25px;
     font-weight: 550;
     font-size: 16.5px;

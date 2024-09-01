@@ -1,6 +1,8 @@
 .add-mailbox-container{
-    background-color: #171717;
-    border: 1px solid #363740;
+    /* background-color: #171717; */
+    background-color: #361399;
+    /* border: 1px solid #363740; */
+    border: 1px solid white;
     border-radius: 8px;
     width: 40vw;
     display: flex;
@@ -34,10 +36,13 @@
     .add-mailbox-btn{
         cursor: pointer;
         height: 40px;
-        background: linear-gradient(to right, rgba(75, 99, 221, 1), rgba(5, 36, 189, 1));
+        /* background: linear-gradient(to right, rgba(75, 99, 221, 1), rgba(5, 36, 189, 1)); */
+        background-color: black;
+        border: 1px solid white;
         outline: none;
         border: none;
         color: white;
+        border: 1px solid white;
         border-radius: 8px;
         font-size: 15px;
         font-weight: 600;

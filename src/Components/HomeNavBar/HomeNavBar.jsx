@@ -27,7 +27,7 @@ function HomeNavBar() {
     return (
         <div className='landing-page-navbar'>
             <div className="navbar-logo">
-                <img src={intelliMailerLogo} alt="" />
+                {/* <img src={intelliMailerLogo} alt="" /> */}
                 <h1>MAILSENSE</h1>
             </div>
             <div className="navbar-right-content">
