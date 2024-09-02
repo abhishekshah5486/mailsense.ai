@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     const spanStyle = {
-        // color: 'rgba(118, 120, 255, 1)'
-        color: '#1cd760'
+        color: 'rgba(118, 120, 255, 1)'
     }
     return (
         <div className='header-section'>

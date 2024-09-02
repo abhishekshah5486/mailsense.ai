@@ -1,8 +1,7 @@
 .user-email-accounts-page{
     height: 100vh;
     width: 100vw;
-    /* background-color: rgba(0, 0, 0, 1); */
-    background-color: #241a46;
+    background-color: rgba(0, 0, 0, 1);
 
     .error-message{
         color: white;
@@ -26,9 +25,8 @@
     .add-account-container{
         height: 5vh;
         width: 100%;
-        /* background-color: #101010; */
-        /* border-bottom: 1px solid #363740; */
-        background-color: #241a46;;
+        background-color: #101010;
+        border-bottom: 1px solid #363740;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -36,14 +34,12 @@
         padding-right: 100px;
 
         .add-new-account-btn{
-            /* background: linear-gradient(to right, rgba(75, 99, 221, 1), rgba(5, 36, 189, 1)); */
-            background-color: black;
+            background: linear-gradient(to right, rgba(75, 99, 221, 1), rgba(5, 36, 189, 1));
             height: 40px;
             outline: none;
             border: none;
             color: white;
             border-radius: 8px;
-            border: 1px solid white;
             img {
                 height: 13px;
                 width: 13px;
@@ -105,12 +101,10 @@
                 border-right: 1px solid #363740;
                 border-left: 1px solid #363740;
                 position: relative;
-                background-color: black;
 
                 .email{
                     font-size: 16px;
                     font-weight: 400;
-                    color: #1cd760;
                 }
                 .service-provider{
                     position: absolute;
@@ -124,9 +118,7 @@
                     right: 15px;
                     outline: none;
                     border: none;
-                    /* background-color: #95050f; */
-                    background-color: black;
-                    border: 1px solid white;
+                    background-color: #95050f;
                     color: white;
                     font-size: 15px;
                     font-weight: 500;

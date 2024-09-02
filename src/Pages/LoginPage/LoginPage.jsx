@@ -55,15 +55,28 @@ function LoginPage() {
             <div className="log-in-page-header">
                 <div className="intelliMailer-logo">
                     <img className="invert spotify-logo-svg" src={intelliMailerLogo} alt="" />
-                    <h1>MAILSENSE</h1>
+                    <h1>REACHINBOX</h1>
                 </div>
             </div>
             <div className="log-in-page-down-content">
                 <div className="log-in-page-form">
                     <div className="log-in-page-heading">
-                        <h1>Log in to MailSense</h1>
+                        <h1>Log in to ReachInbox</h1>
                     </div>
-    
+                    <div className="log-in-accounts">
+                        <ul>
+                            <li className="google-login">
+                                <button className="google-login-btn">
+                                    <div className="google-login-div xR230zZLI">
+                                        <img src={googleIcon} alt="" className="new-google-icon" />
+                                        <div className="xR230zZTp">
+                                            <h3>Continue with Google</h3>
+                                        </div>   
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="horizontal-line"></div>
                     <div className="log-in-form">
                         <div className="username-email">
@@ -90,7 +103,7 @@ function LoginPage() {
                     <div className="create-account">
                         <h3 id="xZA009Tz">Don't have an account?</h3>
                         <h3 id="xZA009Ta">
-                            <Link to="/users/register" className='link'>Sign up for Mailsense</Link>
+                            <Link to="/users/register" className='link'>Sign up for ReachInbox</Link>
                         </h3>
                     </div>
                 </div>

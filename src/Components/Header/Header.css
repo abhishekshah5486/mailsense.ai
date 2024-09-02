@@ -39,12 +39,10 @@
         .cta-button{
             outline: none;
             border: none;
-            /* background: linear-gradient(to bottom, rgba(62, 86, 207, 1), rgba(80, 7, 192, 1)); */
-            background-color: #1cd760;
+            background: linear-gradient(to bottom, rgba(62, 86, 207, 1), rgba(80, 7, 192, 1));
             width: 12rem;
             height: 50px;
-            /* color: white; */
-            color: black;
+            color: white;
             font-size: 18px;
             font-weight: 500;
             border-radius: 8px;
